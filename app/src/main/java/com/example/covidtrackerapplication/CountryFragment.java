@@ -4,12 +4,15 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -33,7 +36,9 @@ import java.util.HashSet;
 public class CountryFragment extends Fragment {
 
     TextView textView, textView2, textView3, textView4;
-    ProgressBar progressBar,progressBar2,progressBar3,progressBar4;
+    ProgressBar progressBar, progressBar2, progressBar3, progressBar4;
+    CardView cardView, cardView2, cardView3, cardView4;
+    Animation topAnim, bottomAnim;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +60,20 @@ public class CountryFragment extends Fragment {
         progressBar2.setVisibility(View.VISIBLE);
         progressBar3.setVisibility(View.VISIBLE);
         progressBar4.setVisibility(View.VISIBLE);
+
+        cardView = view.findViewById(R.id.cardView);
+        cardView2 = view.findViewById(R.id.cardView2);
+        cardView3 = view.findViewById(R.id.cardView3);
+        cardView4 = view.findViewById(R.id.cardView4);
+
+        topAnim = AnimationUtils.loadAnimation(getContext(),R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
+
+        cardView.setAnimation(topAnim);
+        cardView2.setAnimation(topAnim);
+
+        cardView3.setAnimation(bottomAnim);
+        cardView4.setAnimation(bottomAnim);
 
         getData();
 
@@ -93,7 +112,9 @@ public class CountryFragment extends Fragment {
                                 textView2.setText(totalConfirm);
                                 textView3.setText(NewRecovered);
                                 textView4.setText(deaths);
+                                break;
                             }
+
                         }
 
                     } catch (Exception e) {

@@ -4,11 +4,15 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -23,6 +27,10 @@ import org.json.JSONObject;
 public class WorldWideFragment extends Fragment {
 
     TextView textView, textView2, textView3, textView4;
+    ProgressBar progressBar, progressBar2, progressBar3, progressBar4;
+    CardView cardView, cardView2, cardView3, cardView4;
+    Animation topAnim, bottomAnim;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,6 +41,30 @@ public class WorldWideFragment extends Fragment {
         textView2 = view.findViewById(R.id.text2);
         textView3 = view.findViewById(R.id.text3);
         textView4 = view.findViewById(R.id.text4);
+
+        progressBar = view.findViewById(R.id.progress5);
+        progressBar2 = view.findViewById(R.id.progress6);
+        progressBar3 = view.findViewById(R.id.progress7);
+        progressBar4 = view.findViewById(R.id.progress8);
+
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar2.setVisibility(View.VISIBLE);
+        progressBar3.setVisibility(View.VISIBLE);
+        progressBar4.setVisibility(View.VISIBLE);
+
+        cardView = view.findViewById(R.id.cardView);
+        cardView2 = view.findViewById(R.id.cardView2);
+        cardView3 = view.findViewById(R.id.cardView3);
+        cardView4 = view.findViewById(R.id.cardView4);
+
+        topAnim = AnimationUtils.loadAnimation(getContext(),R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
+
+        cardView.setAnimation(topAnim);
+        cardView2.setAnimation(topAnim);
+
+        cardView3.setAnimation(bottomAnim);
+        cardView4.setAnimation(bottomAnim);
 
         getData();
 
@@ -53,6 +85,11 @@ public class WorldWideFragment extends Fragment {
                             String totalConfirm = jsonObject1.getString("TotalConfirmed");
                             String deaths = jsonObject1.getString("NewDeaths");
                             String NewRecovered = jsonObject1.getString("NewRecovered");
+
+                            progressBar.setVisibility(View.INVISIBLE);
+                            progressBar2.setVisibility(View.INVISIBLE);
+                            progressBar3.setVisibility(View.INVISIBLE);
+                            progressBar4.setVisibility(View.INVISIBLE);
 
                             textView.setText(confirm);
                             textView2.setText(totalConfirm);

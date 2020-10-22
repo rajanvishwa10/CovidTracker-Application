@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".WorldWideFragment">
 
     <LinearLayout
@@ -23,6 +23,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
@@ -37,6 +38,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/progress5"
+                        style="@style/SpinKitView.Circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_alignTop="@+id/text"
+                        android:layout_alignBottom="@+id/text"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="-1dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="2dp"
+                        android:elevation="30dp"
+                        app:SpinKit_Color="#FF1E6A"
+                        app:layout_constraintBottom_toBottomOf="@+id/text"
+                        app:layout_constraintEnd_toEndOf="@+id/text"
+                        app:layout_constraintHorizontal_bias="0.797"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text"
+                        app:layout_constraintVertical_bias="0.0" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -44,16 +65,18 @@
                         android:fontFamily="@font/font"
                         android:paddingStart="10dp"
                         android:text="Confirmed"
-                        android:textStyle="bold"
                         android:textColor="#FF1E6A"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
                         android:layout_marginTop="10dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/font"
                         android:gravity="end"
@@ -68,10 +91,11 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 app:cardBackgroundColor="#314DD0E1"
@@ -82,6 +106,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/progress6"
+                        style="@style/SpinKitView.Circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_alignTop="@+id/text2"
+                        android:layout_alignBottom="@+id/text2"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="-1dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="2dp"
+                        android:elevation="30dp"
+                        app:SpinKit_Color="#2196F3"
+                        app:layout_constraintBottom_toBottomOf="@+id/text2"
+                        app:layout_constraintEnd_toEndOf="@+id/text2"
+                        app:layout_constraintHorizontal_bias="0.797"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text2"
+                        app:layout_constraintVertical_bias="0.0" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -89,9 +133,9 @@
                         android:fontFamily="@font/font"
                         android:paddingStart="10dp"
                         android:text="Total Confirmed"
-                        android:textStyle="bold"
                         android:textColor="#2196F3"
-                        android:textSize="17sp" />
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/text2"
@@ -122,6 +166,7 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
@@ -135,6 +180,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/progress7"
+                        style="@style/SpinKitView.Circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_alignTop="@+id/text3"
+                        android:layout_alignBottom="@+id/text3"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="-1dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="2dp"
+                        android:elevation="30dp"
+                        app:SpinKit_Color="#2EAF33"
+                        app:layout_constraintBottom_toBottomOf="@+id/text3"
+                        app:layout_constraintEnd_toEndOf="@+id/text3"
+                        app:layout_constraintHorizontal_bias="0.797"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text3"
+                        app:layout_constraintVertical_bias="0.0" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -142,9 +207,9 @@
                         android:fontFamily="@font/font"
                         android:paddingStart="10dp"
                         android:text="Recovered"
-                        android:textStyle="bold"
                         android:textColor="#2EAF33"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/text3"
@@ -166,6 +231,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="10dp"
@@ -179,6 +245,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/progress8"
+                        style="@style/SpinKitView.Circle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_alignTop="@+id/text4"
+                        android:layout_alignBottom="@+id/text4"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:elevation="30dp"
+                        app:SpinKit_Color="#D4585858"
+                        app:layout_constraintBottom_toBottomOf="@+id/text4"
+                        app:layout_constraintEnd_toEndOf="@+id/text4"
+                        app:layout_constraintHorizontal_bias="0.888"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text4"
+                        app:layout_constraintVertical_bias="0.0" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -186,9 +270,9 @@
                         android:fontFamily="@font/font"
                         android:paddingStart="10dp"
                         android:text="Deceased"
-                        android:textStyle="bold"
                         android:textColor="#D4585858"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/text4"
