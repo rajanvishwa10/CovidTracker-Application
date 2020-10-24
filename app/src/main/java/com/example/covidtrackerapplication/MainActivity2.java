@@ -76,11 +76,6 @@ public class MainActivity2 extends AppCompatActivity {
         imageButton = findViewById(R.id.imageButton);
         imageButton.setAnimation(leftAnim);
 
-        imageButton.setOnClickListener(view -> {
-            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-            CustomTabsIntent customTabsIntent = builder.build();
-            customTabsIntent.launchUrl(getApplicationContext(), Uri.parse("https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"));
-        });
 
         textView.setAnimation(leftAnim);
         textView2.setAnimation(rightAnim);
@@ -116,32 +111,29 @@ public class MainActivity2 extends AppCompatActivity {
         ft.replace(R.id.fragment, fragment);
         ft.commit();
 
-        getData();
-    }
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
 
-    public void onRadioButtonClicked(View view) {
-        boolean check = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.radio:
-                if (check) {
-                    countryCodePicker.setCcpClickable(true);
-                    getSupportFragmentManager().beginTransaction()
+            switch (checkedId) {
+                case R.id.radio:
+                    getSupportFragmentManager().beginTransaction().remove(fragment2)
                             .replace(R.id.fragment, fragment)
                             .addToBackStack(null)
                             .commit();
-                }
-                break;
-            case R.id.radio2:
-                if (check) {
-                    countryCodePicker.setCcpClickable(false);
-                    getSupportFragmentManager().beginTransaction()
+                    break;
+                case R.id.radio2:
+                    getSupportFragmentManager().beginTransaction().remove(fragment)
                             .replace(R.id.fragment, fragment2)
                             .addToBackStack(null)
                             .commit();
-                }
-                break;
-        }
+                    break;
+            }
+        });
+
+        getData();
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -183,4 +175,9 @@ public class MainActivity2 extends AppCompatActivity {
         requestQueue1.add(request);
     }
 
+    public void website(View view) {
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(this, Uri.parse("https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"));
+    }
 }

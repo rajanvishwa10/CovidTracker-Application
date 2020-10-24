@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity2">
 
     <com.hbb20.CountryCodePicker
@@ -69,6 +70,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
+                android:onClick="website"
                 android:background="@drawable/purple_roundbutton"
                 android:src="@drawable/ic_baseline_arrow_forward_24"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -109,7 +111,6 @@
             android:elevation="3dp"
             android:fontFamily="@font/font"
             android:gravity="center"
-            android:onClick="onRadioButtonClicked"
             android:text="Tracker"
             android:textColor="@drawable/textsize_radio"
             android:textSize="16sp" />
@@ -125,7 +126,6 @@
             android:elevation="3dp"
             android:fontFamily="@font/font"
             android:gravity="center"
-            android:onClick="onRadioButtonClicked"
             android:text="Symptoms"
             android:textColor="@drawable/textsize_radio"
             android:textSize="16sp" />
@@ -140,6 +140,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Developed By Rajan"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/date"
