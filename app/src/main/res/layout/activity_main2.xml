@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        app:ccpDialog_backgroundColor="@color/white"
         app:ccp_arrowColor="@color/black"
         app:ccp_padding="10dp"
         app:ccp_showArrow="true"
