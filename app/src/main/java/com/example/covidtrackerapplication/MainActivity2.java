@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.CompoundButton;
@@ -55,12 +57,27 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-        getWindow().setStatusBarColor(getResources().getColor(R.color.white));
-        getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.black));
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
 
+        SwitchCompat switchCompat = findViewById(R.id.switchCompat);
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.black));
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
+                } else {
+                    getWindow().getDecorView().setSystemUiVisibility(
+                            View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.white));
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+                }
+            }
+        });
 
         fragment = new NewFragment();
         fragment2 = new New2Fragment();
@@ -139,7 +156,6 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onBackPressed() {
 
@@ -163,12 +179,12 @@ public class MainActivity2 extends AppCompatActivity {
 
                             DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
                             DateFormat outputFormat = new SimpleDateFormat("dd, MMM YY");
-                            String inputDateStr=split[0];
+                            String inputDateStr = split[0];
                             Date date2 = inputFormat.parse(inputDateStr);
                             String outputDateStr = outputFormat.format(date2);
 
                             if (countryName.equals(country)) {
-                                textView.setText("Last Updated : " +outputDateStr + " " + split2);
+                                textView.setText("Last Updated : " + outputDateStr + " " + split2);
                             }
                         }
 

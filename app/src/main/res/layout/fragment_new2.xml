@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
     tools:context=".New2Fragment">
 
     <TextView
@@ -18,7 +17,7 @@
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/font"
         android:text="Get to know more..."
-        android:textColor="@color/black" />
+        android:textColor="?android:attr/textColorPrimary"/>
 
     <HorizontalScrollView
         android:id="@+id/scrollView"
@@ -36,10 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                app:cardBackgroundColor="@color/white"
                 android:layout_marginVertical="10dp"
                 app:cardCornerRadius="20sp"
-                app:cardElevation="5dp">
+                app:cardElevation="10dp">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -60,7 +58,7 @@
                         android:fontFamily="@font/font"
                         android:gravity="center"
                         android:text="Fever/\nHeadache"
-                        android:textColor="@color/black"
+                        android:textColor="?android:attr/textColorPrimary"
                         android:textSize="12sp" />
                 </RelativeLayout>
 
@@ -71,7 +69,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
-                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="20sp"
                 app:cardElevation="5dp">
 
@@ -94,7 +91,7 @@
                         android:fontFamily="@font/font"
                         android:gravity="center"
                         android:text="Dry\nCough"
-                        android:textColor="@color/black"
+                        android:textColor="?android:attr/textColorPrimary"
                         android:textSize="12sp" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -104,7 +101,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
-                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="20sp"
                 app:cardElevation="5dp">
 
@@ -127,7 +123,7 @@
                         android:fontFamily="@font/font"
                         android:gravity="center"
                         android:text="Sore\nThroat"
-                        android:textColor="@color/black"
+                        android:textColor="?android:attr/textColorPrimary"
                         android:textSize="12sp" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -137,7 +133,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
-                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="20sp"
                 app:cardElevation="5dp">
 
@@ -160,7 +155,7 @@
                         android:fontFamily="@font/font"
                         android:gravity="center"
                         android:text="Shortness of\nBreath"
-                        android:textColor="@color/black"
+                        android:textColor="?android:attr/textColorPrimary"
                         android:textSize="12sp" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -176,7 +171,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/font"
         android:text="Prevention"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -229,14 +224,12 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="24dp"
-                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="10dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
 
                         <TextView
                             android:id="@+id/textView5"
@@ -245,7 +238,7 @@
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/font"
                             android:text="Wear face mask"
-                            android:textColor="@color/black"
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="@+id/textView4"
                             app:layout_constraintStart_toStartOf="@+id/textView4"
@@ -258,7 +251,8 @@
                             android:layout_marginEnd="12dp"
                             android:fontFamily="@font/font"
                             android:text="Since the start of the coronavirus\noutbreak some places have fully\nembraced wearing face masks."
-                            android:textColor="@color/black"
+
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textSize="10sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -269,7 +263,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="10dp"
-                            android:background="@color/white"
+                            android:background="@color/transparent"
                             android:src="@drawable/ic_baseline_chevron_right_24"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -291,7 +285,6 @@
                     android:layout_marginStart="30sp"
                     android:layout_marginEnd="40dp"
                     android:layout_marginTop="24dp"
-                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="2dp">
 
@@ -306,7 +299,7 @@
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/font"
                             android:text="Wash Your Hands"
-                            android:textColor="@color/black"
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="@+id/textView7"
                             app:layout_constraintStart_toStartOf="@+id/textView7"
@@ -320,7 +313,7 @@
                             android:fontFamily="@font/font"
                             android:gravity="start"
                             android:text="These diseases include\ngastrointestinal infections, such as\nSalmonella, and respiratory\ninfections, such as influenza"
-                            android:textColor="@color/black"
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textSize="10sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -330,7 +323,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:background="@color/white"
+                            android:background="@color/transparent"
                             android:src="@drawable/ic_baseline_chevron_right_24"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -360,7 +353,7 @@
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/font"
         android:text="Get to know more..."
-        android:textColor="@color/black" />
+        android:textColor="?android:attr/textColorPrimary" />
 
 
 </RelativeLayout>
