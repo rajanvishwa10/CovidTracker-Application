@@ -1,5 +1,6 @@
 package com.example.covidtrackerapplication;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -66,8 +67,8 @@ public class CountryFragment extends Fragment {
         cardView3 = view.findViewById(R.id.cardView3);
         cardView4 = view.findViewById(R.id.cardView4);
 
-        topAnim = AnimationUtils.loadAnimation(getContext(),R.anim.top_animation);
-        bottomAnim = AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
+        topAnim = AnimationUtils.loadAnimation(getContext(), R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bottom_animation);
 
         cardView.setAnimation(topAnim);
         cardView2.setAnimation(topAnim);
@@ -94,24 +95,87 @@ public class CountryFragment extends Fragment {
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                            String country = jsonObject1.getString("Country");
+                            String country = jsonObject1.getString("CountryCode");
+                            String countryNameJson = jsonObject1.getString("Country");
                             String confirm = jsonObject1.getString("NewConfirmed");
                             String totalConfirm = jsonObject1.getString("TotalConfirmed");
                             String deaths = jsonObject1.getString("NewDeaths");
+                            String totaldeaths = jsonObject1.getString("TotalDeaths");
                             String NewRecovered = jsonObject1.getString("NewRecovered");
+                            String totalRecovered = jsonObject1.getString("TotalRecovered");
+                            String date = jsonObject1.getString("Date");
 
                             progressBar.setVisibility(View.INVISIBLE);
                             progressBar2.setVisibility(View.INVISIBLE);
                             progressBar3.setVisibility(View.INVISIBLE);
                             progressBar4.setVisibility(View.INVISIBLE);
 
-                            Log.d("country", country.toString());
-
                             if (country.equals(countryName)) {
                                 textView.setText(confirm);
                                 textView2.setText(totalConfirm);
                                 textView3.setText(NewRecovered);
                                 textView4.setText(deaths);
+
+                                cardView.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(getContext(), AllDataActivity3.class);
+                                        intent.putExtra("newconfirmed", confirm);
+                                        intent.putExtra("totalconfirmed", totalConfirm);
+                                        intent.putExtra("newdeaths", deaths);
+                                        intent.putExtra("totaldeaths", totaldeaths);
+                                        intent.putExtra("newrecovered", NewRecovered);
+                                        intent.putExtra("totalrecovered", totalRecovered);
+                                        intent.putExtra("country", countryNameJson);
+                                        intent.putExtra("date", date);
+                                        startActivity(intent);
+                                    }
+                                });
+                                cardView2.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(getContext(), AllDataActivity3.class);
+                                        intent.putExtra("newconfirmed", confirm);
+                                        intent.putExtra("totalconfirmed", totalConfirm);
+                                        intent.putExtra("newdeaths", deaths);
+                                        intent.putExtra("totaldeaths", totaldeaths);
+                                        intent.putExtra("newrecovered", NewRecovered);
+                                        intent.putExtra("totalrecovered", totalRecovered);
+                                        intent.putExtra("country", countryNameJson);
+                                        intent.putExtra("date", date);
+                                        startActivity(intent);
+                                    }
+                                });
+                                cardView3.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(getContext(), AllDataActivity3.class);
+                                        intent.putExtra("newconfirmed", confirm);
+                                        intent.putExtra("totalconfirmed", totalConfirm);
+                                        intent.putExtra("newdeaths", deaths);
+                                        intent.putExtra("totaldeaths", totaldeaths);
+                                        intent.putExtra("newrecovered", NewRecovered);
+                                        intent.putExtra("totalrecovered", totalRecovered);
+                                        intent.putExtra("country", countryNameJson);
+                                        intent.putExtra("date", date);
+                                        startActivity(intent);
+                                    }
+                                });
+                                cardView4.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(getContext(), AllDataActivity3.class);
+                                        intent.putExtra("newconfirmed", confirm);
+                                        intent.putExtra("totalconfirmed", totalConfirm);
+                                        intent.putExtra("newdeaths", deaths);
+                                        intent.putExtra("totaldeaths", totaldeaths);
+                                        intent.putExtra("newrecovered", NewRecovered);
+                                        intent.putExtra("totalrecovered", totalRecovered);
+                                        intent.putExtra("country", countryNameJson);
+                                        intent.putExtra("date", date);
+                                        startActivity(intent);
+                                    }
+                                });
                                 break;
                             }
 

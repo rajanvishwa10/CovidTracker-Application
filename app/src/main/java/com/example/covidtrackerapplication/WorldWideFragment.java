@@ -1,5 +1,6 @@
 package com.example.covidtrackerapplication;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -84,7 +85,10 @@ public class WorldWideFragment extends Fragment {
                             String confirm = jsonObject1.getString("NewConfirmed");
                             String totalConfirm = jsonObject1.getString("TotalConfirmed");
                             String deaths = jsonObject1.getString("NewDeaths");
+                            String totaldeaths = jsonObject1.getString("TotalDeaths");
                             String NewRecovered = jsonObject1.getString("NewRecovered");
+                            String totalRecovered = jsonObject1.getString("TotalRecovered");
+                            String date = jsonObject.getString("Date");
 
                             progressBar.setVisibility(View.INVISIBLE);
                             progressBar2.setVisibility(View.INVISIBLE);
@@ -95,6 +99,66 @@ public class WorldWideFragment extends Fragment {
                             textView2.setText(totalConfirm);
                             textView3.setText(NewRecovered);
                             textView4.setText(deaths);
+                            cardView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(getContext(), AllDataActivity3.class);
+                                    intent.putExtra("newconfirmed", confirm);
+                                    intent.putExtra("totalconfirmed", totalConfirm);
+                                    intent.putExtra("newdeaths", deaths);
+                                    intent.putExtra("totaldeaths", totaldeaths);
+                                    intent.putExtra("newrecovered", NewRecovered);
+                                    intent.putExtra("totalrecovered", totalRecovered);
+                                    intent.putExtra("country", "WorldWide");
+                                    intent.putExtra("date", date);
+                                    startActivity(intent);
+                                }
+                            });
+                            cardView2.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(getContext(), AllDataActivity3.class);
+                                    intent.putExtra("newconfirmed", confirm);
+                                    intent.putExtra("totalconfirmed", totalConfirm);
+                                    intent.putExtra("newdeaths", deaths);
+                                    intent.putExtra("totaldeaths", totaldeaths);
+                                    intent.putExtra("newrecovered", NewRecovered);
+                                    intent.putExtra("totalrecovered", totalRecovered);
+                                    intent.putExtra("country", "WorldWide");
+                                    intent.putExtra("date", date);
+                                    startActivity(intent);
+                                }
+                            });
+                            cardView3.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(getContext(), AllDataActivity3.class);
+                                    intent.putExtra("newconfirmed", confirm);
+                                    intent.putExtra("totalconfirmed", totalConfirm);
+                                    intent.putExtra("newdeaths", deaths);
+                                    intent.putExtra("totaldeaths", totaldeaths);
+                                    intent.putExtra("newrecovered", NewRecovered);
+                                    intent.putExtra("totalrecovered", totalRecovered);
+                                    intent.putExtra("country", "WorldWide");
+                                    intent.putExtra("date", date);
+                                    startActivity(intent);
+                                }
+                            });
+                            cardView4.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(getContext(), AllDataActivity3.class);
+                                    intent.putExtra("newconfirmed", confirm);
+                                    intent.putExtra("totalconfirmed", totalConfirm);
+                                    intent.putExtra("newdeaths", deaths);
+                                    intent.putExtra("totaldeaths", totaldeaths);
+                                    intent.putExtra("newrecovered", NewRecovered);
+                                    intent.putExtra("totalrecovered", totalRecovered);
+                                    intent.putExtra("country", "WorldWide");
+                                    intent.putExtra("date", date);
+                                    startActivity(intent);
+                                }
+                            });
                         }catch (Exception e){
                             e.printStackTrace();
                         }
