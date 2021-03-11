@@ -34,25 +34,24 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String name = hospitalList[position];
-        if(name.equals("Delhi") || name.equals("Mumbai") || name.equals("Bangalore") || name.equals("Chandigarh") ||
+        if (name.equals("Delhi") || name.equals("Mumbai") || name.equals("Bangalore") || name.equals("Chandigarh") ||
                 name.equals("Pune") || name.equals("Hyderabad") || name.equals("Kerala") || name.equals("Assam")
                 || name.equals("Chennai") || name.equals("Bengaluru")) {
-            holder.textView.setText(Html.fromHtml("<b>"+name+"</b>"));
+            holder.textView.setText(Html.fromHtml("<b>" + name + "</b>"));
             holder.textView.setTextSize(20);
             holder.textView.setTextColor(Color.BLACK);
-            holder.textView.setPadding(5,25,5,5);
-        }else if(name.equals("Government hospitals") ||
-                name.equals("Government centres")||
+            holder.textView.setPadding(5, 25, 5, 5);
+        } else if (name.equals("Government hospitals") ||
+                name.equals("Government centres") ||
                 name.equals("Government vaccination centres")
-        ||name.equals("Private hospitals") || name.equals("Private centres")){
+                || name.equals("Private hospitals") || name.equals("Private centres")) {
             holder.textView.setText(name);
             holder.textView.setTextSize(18);
-            holder.textView.setPadding(5,15,5,15);
-        }
-        else{
+            holder.textView.setPadding(5, 15, 5, 15);
+        } else {
             holder.textView.setTextSize(15);
             holder.textView.setText(name);
-            holder.textView.setPadding(20,5,5,5);
+            holder.textView.setPadding(20, 5, 5, 5);
         }
 
     }
@@ -64,6 +63,7 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
