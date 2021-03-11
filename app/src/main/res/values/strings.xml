@@ -1,5 +1,227 @@
 <resources>
     <string name="app_name">CovidTracker Application</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="hospitalName">
+        <item>Delhi</item>
+        <item>Government hospitals</item>
+        <item>Aruna Asaf Ali Govt. Hospital</item>
+        <item>Balak Ram Hospital</item>
+        <item>GB Pant Hospital</item>
+        <item>Hindu Rao Hospital</item>
+        <item>Kasturba Hospital</item>
+        <item>Lok Nayak Hospital</item>
+        <item>Maulana Azad Medical College</item>
+        <item>Lal Bahadur Shastri Hospital</item>
+        <item>ESI Hospital Rohini DH</item>
+        <item>Deep Chand Bandhu Hospital DH</item>
+        <item>Dr Baba Saheb Ambedkar Hospital Rohini DH</item>
+        <item>CRPF Composite Hospital, Jharoda Kalan</item>
+        <item>RHTC Najafgarh</item>
+        <item>Private hospitals</item>
+        <item>Delhi Heart and lung hospital</item>
+        <item>Jeevan Mala Hospital</item>
+        <item>Sir Ganga Ram City Hospital, Pusa Road</item>
+        <item>St. Stephens Hospital</item>
+        <item>Indian Spinal Injuries Centre</item>
+        <item>Metro Hospital and Cancer Institute</item>
+        <item>Saroj Medical Institute, Jail Road, Rohini</item>
+        <item>Sunrise Hospital, Rohini</item>
+        <item>Mool Chand Kharaiti Ram Hospital</item>
+        <item>National Heart Institute</item>
+        <item>VIMHANS Hospital</item>
+        <item>Maharaja Agrasen Hospital, Punjabi Bagh</item>
+        <item>Sanjeevan Hospital, Daryaganj</item>
+        <item>Chandigarh</item>
+        <item>GMCH-32 CHD B Block 5th Floor Site 1</item>
+        <item>GMCH-32 CHD B Block 5th Floor Site 2</item>
+        <item>GMSH-16 CHD OPD Block 5th Floor Site 1</item>
+        <item>GMSH-16 CHD OPD Block 3rd Floor Site 2v</item>
+        <item>Police Hospital, Sector 26, Chandigarh</item>
+        <item>Police Hospital, Sector 26 Chandigarh Site 2</item>
+        <item>Civil Hospital, Sector 45, Chandigarh</item>
+        <item>Civil Hospital, Manimajra, Chandigarh</item>
+        <item>HWC (Dispensary), Sector 49, Chandigarh</item>
+        <item>PGIMER Lecture Theatre Complex, Chandigarh</item>
+        <item>Advance Pediatric Centre PGI, Chandigarh</item>
+        <item>Community Centre, Sector 23, Chandigarh</item>
+        <item>ESI Hospital, Ramdarbar, Chandigarh</item>
+        <item>Sites for online registration</item>
+        <item>GMSH 16 CHD OPD Block</item>
+        <item>GMCH 32 CHD B Block</item>
+        <item>Civil Hospital Sector 45 CHD</item>
+        <item>Civil Hospital Manimajra CHD</item>
+        <item>HWC, Sector 49</item>
+        <item>Private centres</item>
+        <item>Santokh Hospital, House Number 846, Sector 38-A</item>
+        <item>Chaitanya Hospital, Site No. 1 and 2, Sector, 44-C</item>
+        <item>Healing Hospital and Institute of Paramedical Sciences, SCO 18–19, Sector 34-A</item>
+        <item>Landmark Hospital, House Number 846, Sector 38-A</item>
+        <item>Dharam Hospital, House Number 2040, Sector 15-C</item>
+        <item>Pune</item>
+        <item>Kamla Nehru Hospital in Mangalwar Peth</item>
+        <item>Deenanath hospital</item>
+        <item>Jayabhai Sutar Hospital in Kothrud</item>
+        <item>Rajiv Gandhi Hospital in Yerawada</item>
+        <item>Sassoon General Hospital</item>
+        <item>Gangaram Karne hospital on Nagar road</item>
+        <item>Kalas Hospital in Yerawada</item>
+        <item>Malti Kachi Hospital in Bhavani Peth</item>
+        <item>Babasaheb Ambedkar Hospital in Dias Plot</item>
+        <item>Bindu Madhav Thackeray Hospital in Warje</item>
+        <item>Bartakke Hospital in Warje</item>
+        <item>Bhangire Hospital in Mohammadwadi</item>
+        <item>Pote Hospital in Sahakarnagar</item>
+        <item>Aundh Institute of Medical Science in Aundh</item>
+        <item>Inlaks and Budhrani Hospital in Koregaon Park</item>
+        <item>B J Medical College</item>
+        <item>Naidu hospital</item>
+        <item>Minatai Thakre hospital</item>
+        <item>Savitribai Phule hospital in Guruwarpeth</item>
+        <item>Kalavati Mavale hospital</item>
+        <item>Ramabai Ambedkar hospital</item>
+        <item>Premchand Oswal hospital</item>
+        <item>Janta Vasahat hospital</item>
+        <item>Vilasrao Tambe hospital</item>
+        <item>Thorwe hospital</item>
+        <item>Tharkude hospital</item>
+        <item>Sakharam Kodre hospital</item>
+        <item>Annasaheb Magar hospital</item>
+        <item>Savitribai Phule hospital in Kondhwa</item>
+        <item>Balajinagar hospital</item>
+        <item>Vasant More hospital</item>
+        <item>Laigude hospital</item>
+        <item>Hyderabad</item>
+        <item>Gandhi Hospital</item>
+        <item>Osmania General hospital</item>
+        <item>Fever Hospital</item>
+        <item>ENT Hospital</item>
+        <item>SD EYE Hospital</item>
+        <item>DH King Koti</item>
+        <item>AH Malakpet</item>
+        <item>AH Golconda</item>
+        <item>AH Nampally</item>
+        <item>Paldar UPHC</item>
+        <item>Nizamia TIBI Hospital</item>
+        <item>ESIC Medical College Hospital</item>
+        <item>Kerala</item>
+        <item>Government vaccination centres</item>
+        <item>TSC Hospital Private Limited, N.H By pass road, S N Nagar, Kulathoor, Thiruvananthapuram</item>
+        <item>Attukal Devi Institute of Medical Sciences Ltd., Attukal, Manacaud Po., Thiruvananthapuram</item>
+        <item>India Hospitals, Gandhari Amman Kovil Rd, Santhi Nagar, Thampanoor, Thiruvananthapuram</item>
+        <item>Goutham Hospital, PB No. 868, Panayappilly, Kochi – 682 005</item>
+        <item>Silverline Hospital # 53/307 A, K P Vallon Road, Kadavanthara P O., Kochi: 682020</item>
+        <item>Lakshmi Hospital, Diwan’s Road, Ernakulam: 682016</item>
+        <item>Assam</item>
+        <item>Government vaccination centres</item>
+        <item>Guwahati Medical College &amp; Hospital, Guwahati</item>
+        <item>Assam Medical College &amp; Hospital, Dibrugarh</item>
+        <item>Silchar Medical College &amp; Hospital, Silchar</item>
+        <item>Jorhat Medical College &amp; Hospital, Jorhat</item>
+        <item>Fakhruddin Ali Ahmed Medical College &amp; Hospital, Barpeta</item>
+        <item>Tezpur Medical College &amp; Hospital, Tezpur</item>
+        <item>Diphu Medical College &amp; Hospital, Diphu</item>
+        <item>Private centres (All in Guwahati)</item>
+        <item>Apollo Hospital</item>
+        <item>Downtown Hospital</item>
+        <item>GNRC Hospital</item>
+        <item>Healthcity Hospital</item>
+        <item>Nemcare Hospital</item>
+        <item>Marwari Nursing Home</item>
+        <item>Chennai</item>
+        <item>Public Health And Welfare Society, Ramakrishnapuram, West Mambalam</item>
+        <item>Appasamy Hospitals, Arumbakkam</item>
+        <item>Sampat Nursing Home, Mylapore</item>
+        <item>Faith Multispecialty Hospital, Konnur, Villivakkam</item>
+        <item>Soorya Hospital Saligramam, Saligramam</item>
+        <item>Xcellent Care Super Speciality, Velachery</item>
+        <item>Thalessemia Welfare Hospital, Taramani</item>
+        <item>Prashanth Hospital Velachery, Velachery</item>
+        <item>Adyar PM Hospital, Adyar</item>
+        <item>Bloom Health Care, Velachery</item>
+        <item>Abhijay Hospital Perambur, Venkatesan, Perambur, Chennai</item>
+        <item>Hycare Super Speciality Hospital, Arumbakkam</item>
+        <item>Bengaluru</item>
+        <item>Government centres</item>
+        <item>KC General Hospital, Jayanagar</item>
+        <item>General Hospital, Bangalore</item>
+        <item>Medical College and Hospital</item>
+        <item>Bowring Medical College Hospital</item>
+        <item>CV Raman General Hospital</item>
+        <item>Private centres</item>
+        <item>Vikram Hospital</item>
+        <item>Manipal Hospital, Old Airport Road</item>
+        <item>Raghavendra People Tree Hospital</item>
+        <item>Sapthagiri Institute of Medical Sciences</item>
+        <item>Columbia Asia Hospital, Yeshwanthpur</item>
+        <item>Apollo Hospital, Sheshadripuram</item>
+        <item>Columbia Asia Hospital, Sarjapur</item>
+        <item>Columbia Asia Hospital, Whitefield</item>
+        <item>Fortis Hospital, Bannerghatta Road</item>
+        <item>Apollo Hospital, Bannerghatta Road</item>
+        <item>Sparsh Hospital</item>
+        <item>Rajarajeswari Medical College &amp; Hospital</item>
+        <item>BGS Global Institute of Medical Sciences</item>
+        <item>Columbia Asia Hospital, Hebbal</item>
+        <item>Aster CMI Hospital, Hebbal</item>
+        <item>Apollo Speciality Hospital, Jayanagar</item>
+        <item>Dayanand Sagar Hospital</item>
+        <item>Kumaraswamy Layout, Mallige</item>
+        <item>Hospital, Sushrusha Hospital</item>
+        <item>MS Ramaiah Medical College and Hospital.</item>
+        <item>Mumbai</item>
+        <item>CAMA Hospital</item>
+        <item>Jaslok Hospital</item>
+        <item>HN Reliance Hospital</item>
+        <item>Saiefee Hospital</item>
+        <item>Breach Candy Hospital</item>
+        <item>Bhatiya Hospital</item>
+        <item>Kasturba Hospital</item>
+        <item>TNMC &amp; BYL Nair Ch. Hospital</item>
+        <item>JJ Hospital</item>
+        <item>Wockhardt Hospital</item>
+        <item>Prince Aly Khan</item>
+        <item>KEM Hospital</item>
+        <item>Global Hospital</item>
+        <item>LTMC &amp; GH Sion Hospital</item>
+        <item>K J Somaya Hospital</item>
+        <item>Hinduja Hospital</item>
+        <item>SL Raheja Hospital</item>
+        <item>SRRC Children Hospital</item>
+        <item>BKC Jumbo Hospital</item>
+        <item>K B Bhabha Hospital, Bandra</item>
+        <item>Lilavati Hospital</item>
+        <item>Holy Family Hospital</item>
+        <item>Seven Hills Hospital</item>
+        <item>Cooper Hospital</item>
+        <item>Nanavati Hospital</item>
+        <item>Kokilaben Hospital</item>
+        <item>Nesco</item>
+        <item>SK Patil Hospital</item>
+        <item>MW Desai Hospital</item>
+        <item>BDBA Hospital</item>
+        <item>Dahisar Hospital</item>
+        <item>Bhagvati Hospital</item>
+        <item>Kurla Bhaba Hospital</item>
+        <item>Centennary Govandi Hospital</item>
+        <item>Barc Hospital</item>
+        <item>MAA Hospital</item>
+        <item>Rajawadi Hospital</item>
+        <item>Hindu Mahasabha Hospital</item>
+        <item>LH Hiranandani Hospital</item>
+        <item>Veer Savarkar Hospital</item>
+        <item>Mulund Jumbo</item>
+        <item>Sushrusha Hospital &amp; Research Centre, Vikhroli</item>
+        <item>KJ Somaiya Hospital &amp; Research Centre</item>
+        <item>PD Hinduja Hospital &amp; MRC</item>
+        <item>Kaushalya Medical Foundation Trust</item>
+        <item>Masina Hospital</item>
+        <item>Holy Family Hospital</item>
+        <item>S L Raheja Hospital</item>
+        <item>Guru Nanak Hospital</item>
+        <item>Bombay Hospital</item>
+        <item>Fortis, Mulund</item>
+        <item>Conwest &amp; Manjula S Badani Jain Hospital</item>
+        <item>Holy Spirit Hospital</item>
+        <item>Surana Sethia Hospital</item>
+    </string-array>
 </resources>

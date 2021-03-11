@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,7 +51,7 @@ public class MainActivity2 extends AppCompatActivity {
     Animation topAnim, leftAnim, rightAnim;
     ImageView imageView;
     RadioGroup radioGroup;
-    RadioButton radioButton, radioButton2;
+    RadioButton radioButton, radioButton2, radioButton3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,12 +102,12 @@ public class MainActivity2 extends AppCompatActivity {
         imageButton = findViewById(R.id.imageButton);
         imageButton.setAnimation(leftAnim);
 
-
         textView.setAnimation(leftAnim);
         textView2.setAnimation(rightAnim);
 
         radioButton = findViewById(R.id.radio);
         radioButton2 = findViewById(R.id.radio2);
+        radioButton3 = findViewById(R.id.radio3);
 
         radioButton.setAnimation(leftAnim);
         radioButton2.setAnimation(rightAnim);
@@ -146,18 +147,25 @@ public class MainActivity2 extends AppCompatActivity {
                             .addToBackStack(null)
                             .commit();
                     break;
+
                 case R.id.radio2:
                     getSupportFragmentManager().beginTransaction().remove(fragment)
                             .replace(R.id.fragment, fragment2)
                             .addToBackStack(null)
                             .commit();
                     break;
+
+                case R.id.radio3:
+                    Intent intent = new Intent(getApplicationContext(),VaccineActivity.class);
+                    startActivity(intent);
+                    finish();
+                    //Toast.makeText(this, "Vaccine", Toast.LENGTH_SHORT).show();
+                    break;
             }
         });
 
         getData();
     }
-
 
     @Override
     public void onBackPressed() {
