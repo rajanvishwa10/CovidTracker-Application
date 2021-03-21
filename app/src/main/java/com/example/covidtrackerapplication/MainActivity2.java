@@ -1,5 +1,6 @@
 package com.example.covidtrackerapplication;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
@@ -12,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -40,6 +42,7 @@ import java.nio.file.StandardOpenOption;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -47,7 +50,7 @@ public class MainActivity2 extends AppCompatActivity {
     TextView textView, textView2;
     String country;
     CountryCodePicker countryCodePicker;
-    ImageButton imageButton;
+    ImageButton imageButton, speechImageButton;
     Animation topAnim, leftAnim, rightAnim;
     ImageView imageView;
     RadioGroup radioGroup;
@@ -90,7 +93,7 @@ public class MainActivity2 extends AppCompatActivity {
         textView2 = findViewById(R.id.textView4);
 
         countryCodePicker = findViewById(R.id.ccp);
-        country = countryCodePicker.getDefaultCountryNameCode();
+        country = countryCodePicker.getDefaultCountryName();
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         rightAnim = AnimationUtils.loadAnimation(this, R.anim.right_animation);
@@ -115,20 +118,31 @@ public class MainActivity2 extends AppCompatActivity {
         radioGroup = findViewById(R.id.radioGroup);
         radioGroup.setAnimation(topAnim);
 
+        speechImageButton = findViewById(R.id.speechbutton);
+        speechImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speach to text");
+                startActivityForResult(intent, 1);
+            }
+        });
+
         countryCodePicker.setAnimation(rightAnim);
 
         countryCodePicker.setOnCountryChangeListener(() -> {
             Bundle bundle = new Bundle();
-            bundle.putString("country", countryCodePicker.getSelectedCountryNameCode());
+            bundle.putString("country", countryCodePicker.getSelectedCountryName());
             fragment.setArguments(bundle);
             final FragmentManager fm = getSupportFragmentManager();
             final FragmentTransaction ft = fm.beginTransaction();
             ft.detach(fragment).attach(fragment).commit();
-            country = countryCodePicker.getSelectedCountryNameCode();
+            country = countryCodePicker.getSelectedCountryName();
         });
 
         Bundle bundle = new Bundle();
-        bundle.putString("country", countryCodePicker.getDefaultCountryNameCode());
+        bundle.putString("country", countryCodePicker.getDefaultCountryName());
 
         fragment.setArguments(bundle);
 
@@ -183,7 +197,7 @@ public class MainActivity2 extends AppCompatActivity {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                             String date = jsonObject1.getString("Date");
-                            String countryName = jsonObject1.getString("CountryCode");
+                            String countryName = jsonObject1.getString("Country");
 
                             String[] split = date.split("T");
                             //String split2 = split[1].substring(0, split[1].length() - 1);
@@ -217,4 +231,17 @@ public class MainActivity2 extends AppCompatActivity {
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(this, Uri.parse("https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"));
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        ArrayList<String> match = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+        Bundle bundle = new Bundle();
+        bundle.putString("country",  match.get(0));
+        fragment.setArguments(bundle);
+        final FragmentManager fm = getSupportFragmentManager();
+        final FragmentTransaction ft = fm.beginTransaction();
+        ft.detach(fragment).attach(fragment).commit();
+    }
+
 }

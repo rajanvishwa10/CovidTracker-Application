@@ -82,7 +82,6 @@ public class CountryFragment extends Fragment {
 
     }
 
-
     private void getData() {
         Bundle bundle = this.getArguments();
         String countryName = bundle.getString("countryName");
@@ -110,7 +109,7 @@ public class CountryFragment extends Fragment {
                             progressBar3.setVisibility(View.INVISIBLE);
                             progressBar4.setVisibility(View.INVISIBLE);
 
-                            if (country.equals(countryName)) {
+                            if (countryName.contains(countryNameJson)) {
                                 textView.setText(confirm);
                                 textView2.setText(totalConfirm);
                                 textView3.setText(NewRecovered);
