@@ -109,7 +109,7 @@ public class CountryFragment extends Fragment {
                             progressBar3.setVisibility(View.INVISIBLE);
                             progressBar4.setVisibility(View.INVISIBLE);
 
-                            if (countryName.contains(countryNameJson)) {
+                            if (countryName.equals(country)) {
                                 textView.setText(confirm);
                                 textView2.setText(totalConfirm);
                                 textView3.setText(NewRecovered);

@@ -30,11 +30,13 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.hbb20.CountryCodePicker;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
@@ -49,6 +51,7 @@ public class MainActivity2 extends AppCompatActivity {
     Fragment fragment, fragment2;
     TextView textView, textView2;
     String country;
+    String countryByCode;
     CountryCodePicker countryCodePicker;
     ImageButton imageButton, speechImageButton;
     Animation topAnim, leftAnim, rightAnim;
@@ -71,7 +74,7 @@ public class MainActivity2 extends AppCompatActivity {
 //            System.out.println("false");
 //        }
 //
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR| View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         getWindow().setStatusBarColor(getResources().getColor(R.color.white));
         getWindow().setNavigationBarColor(getResources().getColor(R.color.white));
 //
@@ -133,16 +136,16 @@ public class MainActivity2 extends AppCompatActivity {
 
         countryCodePicker.setOnCountryChangeListener(() -> {
             Bundle bundle = new Bundle();
-            bundle.putString("country", countryCodePicker.getSelectedCountryName());
+            bundle.putString("country", countryCodePicker.getSelectedCountryNameCode());
             fragment.setArguments(bundle);
             final FragmentManager fm = getSupportFragmentManager();
             final FragmentTransaction ft = fm.beginTransaction();
             ft.detach(fragment).attach(fragment).commit();
-            country = countryCodePicker.getSelectedCountryName();
+            country = countryCodePicker.getSelectedCountryNameCode();
         });
 
         Bundle bundle = new Bundle();
-        bundle.putString("country", countryCodePicker.getDefaultCountryName());
+        bundle.putString("country", countryCodePicker.getDefaultCountryNameCode());
 
         fragment.setArguments(bundle);
 
@@ -170,7 +173,7 @@ public class MainActivity2 extends AppCompatActivity {
                     break;
 
                 case R.id.radio3:
-                    Intent intent = new Intent(getApplicationContext(),VaccineActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), VaccineActivity.class);
                     startActivity(intent);
                     finish();
                     //Toast.makeText(this, "Vaccine", Toast.LENGTH_SHORT).show();
@@ -236,12 +239,43 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         ArrayList<String> match = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+        getCountryCode(match.get(0));
         Bundle bundle = new Bundle();
-        bundle.putString("country",  match.get(0));
+        bundle.putString("country", match.get(0));
         fragment.setArguments(bundle);
         final FragmentManager fm = getSupportFragmentManager();
         final FragmentTransaction ft = fm.beginTransaction();
         ft.detach(fragment).attach(fragment).commit();
     }
+
+
+
+    private void getCountryCode(String country) {
+        String url = "https://api.covid19api.com/summary";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, response -> {
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = new JSONObject(response);
+                JSONArray jsonArray = jsonObject.getJSONArray("Countries");
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                    String countryName = jsonObject1.getString("Country");
+                    if(country.contains(countryName)){
+                        String countryCode = jsonObject1.getString("CountryCode");
+                        countryCodePicker.setCountryForNameCode(countryCode);
+                    }
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }, error -> {
+
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+    }
+
 
 }
