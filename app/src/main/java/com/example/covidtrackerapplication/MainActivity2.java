@@ -51,7 +51,6 @@ public class MainActivity2 extends AppCompatActivity {
     Fragment fragment, fragment2;
     TextView textView, textView2;
     String country;
-    String countryByCode;
     CountryCodePicker countryCodePicker;
     ImageButton imageButton, speechImageButton;
     Animation topAnim, leftAnim, rightAnim;
@@ -260,7 +259,7 @@ public class MainActivity2 extends AppCompatActivity {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                     String countryName = jsonObject1.getString("Country");
-                    if(country.contains(countryName)){
+                    if(countryName.contains(country)){
                         String countryCode = jsonObject1.getString("CountryCode");
                         countryCodePicker.setCountryForNameCode(countryCode);
                     }
